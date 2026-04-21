@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-50 border-t border-gray-200 mt-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="font-bold text-gray-900 mb-3">BestPicks</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Independent, research-backed product reviews to help you buy smarter.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-700 mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-brand-600 transition-colors">Home</a></li>
+          <li><a href="/blog" class="hover:text-brand-600 transition-colors">All Reviews</a></li>
+          <li><a href="/about" class="hover:text-brand-600 transition-colors">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-700 mb-3">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="/affiliate-disclosure" class="hover:text-brand-600 transition-colors">Affiliate Disclosure</a></li>
+          <li><a href="/privacy" class="hover:text-brand-600 transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200 pt-8">
+      <p class="text-xs text-gray-400 text-center">
+        &copy; {year} BestPicks. All rights reserved. &nbsp;|&nbsp;
+        <span class="italic">
+          This site contains affiliate links. We may earn a commission at no extra cost to you.
+        </span>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -32,7 +32,8 @@ const {
 
 const metaTitle = seo?.metaTitle ?? `${title} | BestPicks`;
 const metaDescription = seo?.metaDescription ?? description;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteBase = Astro.site ?? new URL('https://seo-affiliate-site.vercel.app');
+const canonicalURL = new URL(Astro.url.pathname, siteBase);
 
 const formattedPubDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',

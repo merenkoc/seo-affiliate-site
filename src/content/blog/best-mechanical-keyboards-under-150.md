@@ -4,7 +4,7 @@ description: Discover the top mechanical keyboards under $150, featuring excelle
 pubDate: 2024-09-16
 author: Editorial Team
 category: Tech
-tags: mechanical keyboards, gaming keyboards, keyboard reviews
+tags: ["mechanical keyboards", "gaming keyboards", "keyboard reviews"]
 affiliate_disclosure: true
 seo:
   metaTitle: Best Mechanical Keyboards Under $150

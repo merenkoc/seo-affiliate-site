@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Reviews — BestPicks</title>
+  <meta name="description" content="Browse all our independent product reviews and buying guides." />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-10">
+      <h1 class="text-3xl font-extrabold text-gray-900 mb-2">All Reviews</h1>
+      <p class="text-gray-500">{posts.length} article{posts.length !== 1 ? 's' : ''}</p>
+    </div>
+
+    {posts.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {posts.map(post => (
+          <ArticleCard
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            slug={post.slug}
+            category={post.data.category}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-20 text-gray-400">
+        <p class="text-6xl mb-4">✍️</p>
+        <p class="text-lg">No articles yet.</p>
+      </div>
+    )}
+  </main>
+
+  <Footer />
+</body>
+</html>
